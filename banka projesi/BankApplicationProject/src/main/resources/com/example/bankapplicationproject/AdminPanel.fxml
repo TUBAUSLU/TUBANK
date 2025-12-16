@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="scenePane" prefHeight="764.0" prefWidth="920.0" style="-fx-background-color: #ffeaa7;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankapplicationproject.AdminController">
+   <children>
+      <Pane layoutX="33.0" layoutY="14.0" prefHeight="45.0" prefWidth="920.0" style="-fx-background-color: #dfe6e9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="450.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Müşteriler">
+               <font>
+                  <Font size="19.0" />
+               </font></Text>
+            <Button fx:id="close_btn" layoutX="870.0" layoutY="10.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="26.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../picture/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="86.0" fitWidth="82.0" layoutX="118.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button fx:id="ekle_btn" layoutX="133.0" layoutY="654.0" mnemonicParsing="false" onAction="#ekle" prefHeight="63.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Ekle">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/ekle.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="guncelle_btn" layoutX="293.0" layoutY="654.0" mnemonicParsing="false" onAction="#guncelle" prefHeight="63.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Güncelle">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/guncelle.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="sil_btn" layoutX="459.0" layoutY="654.0" mnemonicParsing="false" onAction="#sil" prefHeight="63.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Sil">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/sil.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="temizle_btn" layoutX="637.0" layoutY="654.0" mnemonicParsing="false" onAction="#temizle" prefHeight="63.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Temizle">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/temizle.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="personel_table" layoutX="14.0" layoutY="68.0" onMouseClicked="#tableviev_click" prefHeight="247.0" prefWidth="896.0">
+        <columns>
+            <TableColumn fx:id="tc_Col" prefWidth="163.33334350585938" text="TC" />
+            <TableColumn fx:id="isim_Col" maxWidth="187.0" prefWidth="146.0" text="İSİM" />
+            <TableColumn fx:id="soyisim_Col" maxWidth="261.0" prefWidth="135.6666259765625" text="SOYİSİM" />
+            <TableColumn fx:id="telno_Col" maxWidth="283.0" prefWidth="168.3333740234375" text="TELNO" />
+          <TableColumn fx:id="iban_Col" maxWidth="214.0" prefWidth="133.16665649414062" text="IBAN" />
+            <TableColumn fx:id="bakiye_Col" maxWidth="375.0" prefWidth="148.5" text="BAKİYE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="iban_txtfield" disable="true" layoutX="253.0" layoutY="344.0" promptText="IBAN" />
+      <TextField fx:id="isim_txtfield" layoutX="253.0" layoutY="379.0" promptText="İsim:" />
+      <TextField fx:id="soyisim_txtfield" layoutX="253.0" layoutY="422.0" promptText="Soyisim:" />
+      <TextField fx:id="tc_txtfield" layoutX="253.0" layoutY="462.0" promptText="Tc:" />
+      <TextField fx:id="telno_txtfield" layoutX="253.0" layoutY="498.0" promptText="Telefon Numarası:" />
+      <TextField fx:id="bakiye_txtfield" layoutX="253.0" layoutY="538.0" promptText="Bakiye" />
+      <PasswordField fx:id="sifre_passwordfield" layoutX="253.0" layoutY="582.0" promptText="Sifre" />
+      <TextField fx:id="gonderilecekMiktar_txtfield" layoutX="543.0" layoutY="422.0" promptText="Gönderilecek Miktar" />
+      <TextField fx:id="gonderilecek_iban_txtfield" layoutX="544.0" layoutY="463.0" promptText="Kişinin IBAN Numarası" />
+      <Button fx:id="gonder_btn" layoutX="595.0" layoutY="503.0" mnemonicParsing="false" onAction="#gonder" prefHeight="22.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Gönder">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/approve.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="cikis_btn" layoutX="803.0" layoutY="320.0" mnemonicParsing="false" onAction="#cikis" prefHeight="44.0" prefWidth="103.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 2;" text="Çıkış">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../picture/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="75.0" fitWidth="56.0" layoutX="831.0" layoutY="685.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../picture/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
